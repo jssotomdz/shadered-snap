@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.5.6
+Type=Application
+Terminal=false
+Exec=shadered
+Name=SHADERed
+Icon=${SNAP}/SHADERed/icon_256x256.png

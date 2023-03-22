@@ -1,0 +1,35 @@
+name: shadered
+base: core20
+version: '1.5.6'
+summary: Lightweight, cross-platform & full-featured shader IDE 
+description: SHADERed is a lightweight tool for writing and debugging shaders. It is easy to use, open source, cross-platform (runs on Windows, Linux & Web).
+
+grade: stable
+confinement: strict
+
+layout:
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:
+    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
+  /usr/lib/x86_64-linux-gnu/dri:
+    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
+  /usr/share/alsa:
+    bind: $SNAP/usr/share/alsa
+
+parts:
+  shadered:
+    plugin: dump
+    source: https://github.com/dfranx/SHADERed/releases/download/v${SNAPCRAFT_PROJECT_VERSION}/Linux.zip
+    stage-packages:
+      - libopengl0
+      - libglew2.1
+      - libsdl2-2.0-0
+      - libpulse0
+    
+apps:
+  shadered:
+    command: SHADERed/SHADERed
+    plugs:
+      - wayland
+      - x11
+      - opengl
+      - pulseaudio
