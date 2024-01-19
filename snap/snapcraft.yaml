@@ -7,6 +7,10 @@ description: SHADERed is a lightweight tool for writing and debugging shaders. I
 grade: stable
 confinement: strict
 
+compression: lzo
+architectures:
+  - build-on: amd64
+
 layout:
   /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:
     bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio
