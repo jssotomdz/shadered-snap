@@ -28,6 +28,7 @@ parts:
 apps:
   shadered:
     command: SHADERed/SHADERed
+    extensions: [gnome-3-38]
     plugs:
       - wayland
       - x11
